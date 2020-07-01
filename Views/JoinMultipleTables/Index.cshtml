@@ -1,0 +1,27 @@
+﻿@using Join_Tables_SP; 
+@{
+    ViewData["Title"] = "Index";
+}
+
+@{ 
+    IEnumerable<JoinTablesClass> enumobj = ViewData["Message"] as IEnumerable<JoinTablesClass>;
+}
+<h1>Join Mutiple table to single table using stored procedures</h1>
+<h2>.Net core not using entity framework</h2>
+<hr />
+<table class="table">
+    <tr>
+        <th>Author name</th>
+        <th>Book title</th>
+        <th>Publisher name</th>
+    </tr>
+    @foreach (var item in enumobj)
+    {
+        <tr>
+            <td>@item.author_name</td>
+            <td>@item.book_title</td>
+            <td>@item.publisher_name</td>
+        </tr>
+    }
+
+</table>
